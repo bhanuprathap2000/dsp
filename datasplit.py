@@ -17,6 +17,12 @@ for filename, class_name in labels.values:
         os.mkdir(DR + str(class_name))
     src_path = train_dir + '/'+ filename + '.jpeg'
     dst_path = DR + str(class_name) + '/' + filename + '.jpeg'
+    
+    """ Mac saves fiels in png format by default(advantage of PNG over JPEG is that the compression is lossless), 
+        So if you are on mac or any device just check whether 
+        the address is correct or not.
+     ""
+    
     try:
         shutil.copy(src_path, dst_path)
         print("sucessful")
